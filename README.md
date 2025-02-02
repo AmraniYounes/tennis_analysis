@@ -18,7 +18,13 @@ For accurate perspective projection using homography matrix transformation:
 
 1. Clone the repository:
 ```yaml
-
 git clone https://github.com/AmraniYounes/tennis_analysis.git
 cd tennis_analysis
+```
+
+### Key Notes:
+- Ensure you have Python 3.8 or higher installed.
+```bash
+pip install -r requirements.txt
+```
 
