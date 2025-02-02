@@ -19,11 +19,12 @@ For accurate perspective projection using homography matrix transformation:
 
 ✅ **Input video frame** and **minimap image** must satisfy:  
 
-Frame Height (video) == Pixel Height (minimap)
+Frame Height (video) == minimap Height (minimap)
 
 ## Installation
-```yaml
+
 1. Clone the repository:
+```yaml
 ```bash
 git clone https://github.com/AmraniYounes/tennis_analysis.git
 cd tennis_analysis
