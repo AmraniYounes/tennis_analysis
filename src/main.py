@@ -7,23 +7,24 @@ from load_ressources import load_resources
 from setup_video_writers import setup_video_writers
 from detect_objects import detect_objects
 from draw_on_minimap import draw_on_minimap
-from transform_point_to_minimap import transform_point_to_minimap
 from draw_on_frame import draw_on_frame
+from transform_point_to_minimap import transform_point_to_minimap
+
 
 # Constants
 COLORS = {"player": (0, 0, 255), "ball": (0, 255, 255)}
 CLASS_IDS = {"player": 0, "ball": 1}
 SHARPEN_KERNEL = np.array([[0, -1, 0], [-1, 5, -1], [0, -1, 0]])
 FRAME_DELAY = 50
-HOMOGRAPHY_FILE = "../artifacts/homography_matrix.npy"
+HOMOGRAPHY_FILE = "../assets/homography_matrix.npy"
 
 
 # Load resources
 model, cap, minimap_image = load_resources(
     "../runs/train/new_tennis_model/weights/best.pt",
-    "../artifacts/tennis_vid.mp4",
-    "../artifacts/court_frame.jpg",
-    "../artifacts/tennis_minimap.jpg"
+    "../assets/tennis_vid.mp4",
+    "../assets/court_frame.jpg",
+    "../assets/tennis_minimap.jpg"
 )
 
 # Check if homography matrix file exists
@@ -32,7 +33,7 @@ if os.path.exists(HOMOGRAPHY_FILE):
     H = np.load(HOMOGRAPHY_FILE)
 else:
     # Compute homography matrix and save it to file
-    H = calculate_homography("../artifacts/court_frame.jpg", "../artifacts/tennis_minimap.jpg")
+    H = calculate_homography("../assets/court_frame.jpg", "../assets/tennis_minimap.jpg")
     np.save(HOMOGRAPHY_FILE, H)
 
 
@@ -45,7 +46,7 @@ while cap.isOpened():
     if not ret:
         break
 
-    # Apply sharpening filter (optional)
+    # Apply sharpening filter
     sharpened_frame = cv2.filter2D(frame, -1, SHARPEN_KERNEL)
 
     # Fresh minimap copy for each frame
