@@ -1,10 +1,19 @@
 # Tennis Court Minimap Projection
 Real-time player and ball tracking projection on tennis court minimap using YOLOv8 detection and perspective transformation.
 
+## Team members
+    - Chakrabane Houda
+    - Bouamar Hajar
+    - Amrani Younes
+    - Guendaoui Adnane
+    - Taiar Abdellah
+    - Manchoud Reda
+
 ## Features
 - 🎾 Custom YOLOv8 model for player and ball detection
 - 🗺️ Homography matrix transformation for court projection
 - 📍 Bounding box center point mapping
+
 
 ## Requirement
 
@@ -27,4 +36,3 @@ cd tennis_analysis
 ```bash
 pip install -r requirements.txt
 ```
-
