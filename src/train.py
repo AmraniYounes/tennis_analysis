@@ -6,7 +6,7 @@ def main():
 
     # Train the model
     model.train(
-        data='Tennis Match.v3i.yolov8/data.yaml',
+        data='../Tennis Match.v3i.yolov8/data.yaml',
         epochs=100,              
         imgsz=640,              
         batch=16,                

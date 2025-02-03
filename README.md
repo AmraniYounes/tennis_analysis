@@ -20,7 +20,7 @@ Real-time player and ball tracking projection on tennis court minimap using YOLO
 **Dimension Matching**  
 For accurate perspective projection using homography matrix transformation:  
 
-✅ **Input video frame** and **minimap image** must be equal  
+✅ **Input video frame** and **minimap image** heights must be equal  
 
 
 ## Installation
